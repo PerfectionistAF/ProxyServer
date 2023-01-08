@@ -29,12 +29,12 @@ while 1:
 # Start recieving data from the client, STEP: PROXY RECEIVES USER'S REQUEST
     print('\n\nReady to serve...')
     tcpCliSock, user_addr = tcpSerSock.accept()    #Waits for incoming connection
-    request = tcpCliSock.recv(8192)                #Proxy Server receives request
+    #request = tcpCliSock.recv(8192)                #Proxy Server receives request
     message = tcpCliSock.recv(8192).decode()  # Decode the received data from client socket (TCP connection)
     print('Received a connection from:', user_addr)
     print(message)
 #Check if file name is present among the cached files, STEP: CACHE HIT/ FILE CACHING
-    start = request.split('\n')[0]
+    start = message.split('\n')[0]
     source_url = start.split()[1]
     print('URL: ', source_url)
 #URL FILTER
