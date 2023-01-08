@@ -45,7 +45,7 @@ while 1:
         else:
             print('Continue to cache check')
 
-    filename = request.split()[1].partition("/")[2]
+    filename = message.split()[1].partition("/")[2]
     print('Actual file name requested from remote server:', filename)
     fileExist = "false"
     filetouse = "/" + filename
